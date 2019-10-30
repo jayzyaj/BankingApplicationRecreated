@@ -1,0 +1,17 @@
+/Users/jayzdevera/Documents/Personal/BankingSystem/BankService.Tests/obj/Debug/netcoreapp2.2/BankService.Tests.csprojAssemblyReference.cache
+/Users/jayzdevera/Documents/Personal/BankingSystem/BankService.Tests/obj/Debug/netcoreapp2.2/BankService.Tests.csproj.CoreCompileInputs.cache
+/Users/jayzdevera/Documents/Personal/BankingSystem/BankService.Tests/obj/Debug/netcoreapp2.2/BankService.Tests.AssemblyInfoInputs.cache
+/Users/jayzdevera/Documents/Personal/BankingSystem/BankService.Tests/obj/Debug/netcoreapp2.2/BankService.Tests.AssemblyInfo.cs
+/Users/jayzdevera/Documents/Personal/BankingSystem/BankService.Tests/bin/Debug/netcoreapp2.2/NUnit3.TestAdapter.dll
+/Users/jayzdevera/Documents/Personal/BankingSystem/BankService.Tests/bin/Debug/netcoreapp2.2/NUnit3.TestAdapter.pdb
+/Users/jayzdevera/Documents/Personal/BankingSystem/BankService.Tests/bin/Debug/netcoreapp2.2/nunit.engine.netstandard.dll
+/Users/jayzdevera/Documents/Personal/BankingSystem/BankService.Tests/bin/Debug/netcoreapp2.2/BankService.Tests.deps.json
+/Users/jayzdevera/Documents/Personal/BankingSystem/BankService.Tests/bin/Debug/netcoreapp2.2/BankService.Tests.runtimeconfig.json
+/Users/jayzdevera/Documents/Personal/BankingSystem/BankService.Tests/bin/Debug/netcoreapp2.2/BankService.Tests.runtimeconfig.dev.json
+/Users/jayzdevera/Documents/Personal/BankingSystem/BankService.Tests/bin/Debug/netcoreapp2.2/BankService.Tests.dll
+/Users/jayzdevera/Documents/Personal/BankingSystem/BankService.Tests/bin/Debug/netcoreapp2.2/BankService.Tests.pdb
+/Users/jayzdevera/Documents/Personal/BankingSystem/BankService.Tests/bin/Debug/netcoreapp2.2/BankService.dll
+/Users/jayzdevera/Documents/Personal/BankingSystem/BankService.Tests/bin/Debug/netcoreapp2.2/BankService.pdb
+/Users/jayzdevera/Documents/Personal/BankingSystem/BankService.Tests/obj/Debug/netcoreapp2.2/BankService.Tests.csproj.CopyComplete
+/Users/jayzdevera/Documents/Personal/BankingSystem/BankService.Tests/obj/Debug/netcoreapp2.2/BankService.Tests.dll
+/Users/jayzdevera/Documents/Personal/BankingSystem/BankService.Tests/obj/Debug/netcoreapp2.2/BankService.Tests.pdb

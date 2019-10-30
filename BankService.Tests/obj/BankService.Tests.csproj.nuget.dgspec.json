@@ -1,0 +1,124 @@
+{
+  "format": 1,
+  "restore": {
+    "/Users/jayzdevera/Documents/Personal/BankingSystem/BankService.Tests/BankService.Tests.csproj": {}
+  },
+  "projects": {
+    "/Users/jayzdevera/Documents/Personal/BankingSystem/BankService.Tests/BankService.Tests.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/jayzdevera/Documents/Personal/BankingSystem/BankService.Tests/BankService.Tests.csproj",
+        "projectName": "BankService.Tests",
+        "projectPath": "/Users/jayzdevera/Documents/Personal/BankingSystem/BankService.Tests/BankService.Tests.csproj",
+        "packagesPath": "/Users/jayzdevera/.nuget/packages/",
+        "outputPath": "/Users/jayzdevera/Documents/Personal/BankingSystem/BankService.Tests/obj/",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "/Users/jayzdevera/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp2.2"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp2.2": {
+            "projectReferences": {
+              "/Users/jayzdevera/Documents/Personal/BankingSystem/BankService/BankService.csproj": {
+                "projectPath": "/Users/jayzdevera/Documents/Personal/BankingSystem/BankService/BankService.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp2.2": {
+          "dependencies": {
+            "Microsoft.NET.Test.Sdk": {
+              "target": "Package",
+              "version": "[15.9.0, )"
+            },
+            "Microsoft.NETCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.2.0, )",
+              "autoReferenced": true
+            },
+            "NUnit3TestAdapter": {
+              "target": "Package",
+              "version": "[3.11.0, )"
+            },
+            "nunit": {
+              "target": "Package",
+              "version": "[3.11.0, )"
+            }
+          },
+          "imports": [
+            "net461"
+          ],
+          "assetTargetFallback": true,
+          "warn": true
+        }
+      }
+    },
+    "/Users/jayzdevera/Documents/Personal/BankingSystem/BankService/BankService.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/jayzdevera/Documents/Personal/BankingSystem/BankService/BankService.csproj",
+        "projectName": "BankService",
+        "projectPath": "/Users/jayzdevera/Documents/Personal/BankingSystem/BankService/BankService.csproj",
+        "packagesPath": "/Users/jayzdevera/.nuget/packages/",
+        "outputPath": "/Users/jayzdevera/Documents/Personal/BankingSystem/BankService/obj/",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "/Users/jayzdevera/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp2.2"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp2.2": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp2.2": {
+          "dependencies": {
+            "Microsoft.NETCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.2.0, )",
+              "autoReferenced": true
+            }
+          },
+          "imports": [
+            "net461"
+          ],
+          "assetTargetFallback": true,
+          "warn": true
+        }
+      }
+    }
+  }
+}
