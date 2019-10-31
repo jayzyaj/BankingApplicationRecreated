@@ -1,4 +1,5 @@
 ﻿using System;
+using Bank.Services;
 
 namespace BankService
 {
@@ -6,7 +7,8 @@ namespace BankService
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Customer customer = new Customer("john", "clifford");
+            Console.WriteLine(customer.GetFullName());
         }
     }
 }

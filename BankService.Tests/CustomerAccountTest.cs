@@ -4,7 +4,7 @@ using Bank.Services;
 namespace Bank.UnitTests.Services
 {
     [TestFixture]
-    public class Tests
+    public class CustomerAccountTest
     {
         [SetUp]
         public void Setup()
@@ -13,9 +13,10 @@ namespace Bank.UnitTests.Services
         }
 
         [Test]
-        public void Test1()
+        public void Should_Match_CustomerFullName()
         {
-            Assert.Pass();
+            Customer customer = new Customer("john", "clifford");
+            Assert.AreEqual("John Clifford", customer.GetFullName());
         }
     }
 }
