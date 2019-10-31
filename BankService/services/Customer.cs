@@ -9,7 +9,7 @@ namespace Bank.Services
         private string _lastName;
         private string _email;
         private string _contactNumber;
-        private Bank _bankAccount = null;
+        private Account _bankAccount = null;
 
         public Customer(string fName, string lName)
         {
@@ -59,8 +59,9 @@ namespace Bank.Services
         {
             if (HasBankAccount())
                 throw new Exception("You already have an existing bank account.");
-            Bank newBankAccount = new Bank();
+            CheckingAccount newBankAccount = new CheckingAccount();
             this._bankAccount = newBankAccount;
+            Console.WriteLine(this._bankAccount.DisplayBalance());
         }
     }
 }
