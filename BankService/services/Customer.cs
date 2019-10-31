@@ -9,7 +9,7 @@ namespace Bank.Services
         private string _lastName;
         private string _email;
         private string _contactNumber;
-        private Bank bankAccount = null;
+        private Bank _bankAccount = null;
 
         public Customer(string fName, string lName)
         {
@@ -46,6 +46,21 @@ namespace Bank.Services
         public string GetContactNumber()
         {
             return this._contactNumber;
+        }
+
+        public bool HasBankAccount()
+        {
+            if (this._bankAccount == null)
+                return false;
+            return true;
+        }
+
+        public void OpenBankAccount()
+        {
+            if (HasBankAccount())
+                throw new Exception("You already have an existing bank account.");
+            Bank newBankAccount = new Bank();
+            this._bankAccount = newBankAccount;
         }
     }
 }

@@ -4,9 +4,11 @@ namespace Bank.Services
 {
     public class Bank
     {
-        public bool IsPrime(int candidate)
+        private string bankName;
+
+        public Bank()
         {
-            throw new NotImplementedException("Please create a test first.");
+            
         }
     }
 }
