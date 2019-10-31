@@ -30,9 +30,22 @@ namespace Bank.Services
                 throw new Exception("Email is invalid");
         }
 
+        public void SetContactNumber(string contactNumber)
+        {
+            if (ValidateContactNumber(contactNumber))
+                this._contactNumber = contactNumber;
+            else
+                throw new Exception("Phone number is invalid");
+        }
+
         public string GetEmail()
         {
             return this._email;
+        }
+
+        public string GetContactNumber()
+        {
+            return this._contactNumber;
         }
     }
 }

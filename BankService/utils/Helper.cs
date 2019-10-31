@@ -1,4 +1,3 @@
-using System;
 using System.Text.RegularExpressions;
 
 namespace Helpers
@@ -20,6 +19,15 @@ namespace Helpers
         {
             Regex regex = new Regex(@"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$");
             Match match = regex.Match(email);
+            if (match.Success)
+                return true;
+            return false;
+        }
+
+        public static bool ValidateContactNumber(string contactNumber)
+        {
+            Regex regex = new Regex(@"^(\+63|0)9\d{9}$");
+            Match match = regex.Match(contactNumber);
             if (match.Success)
                 return true;
             return false;

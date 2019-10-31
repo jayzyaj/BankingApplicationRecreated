@@ -26,5 +26,27 @@ namespace Bank.UnitTests.Services
             this._customer.SetEmail("deverajaycee17@gmail.com");
             Assert.AreEqual("deverajaycee17@gmail.com", this._customer.GetEmail());
         }
+
+        [Test]
+        public void Should_Validate_InvalidCustomerEmail()
+        {
+            Assert.That(() => this._customer.SetEmail("deverajaycee17.com"), Throws.Exception);
+        }
+
+        [Test]
+        public void Should_Match_CustomerContactNumber()
+        {
+            this._customer.SetContactNumber("09399399027");
+            Assert.AreEqual("09399399027", this._customer.GetContactNumber());
+
+            this._customer.SetContactNumber("+639399399027");
+            Assert.AreEqual("+639399399027", this._customer.GetContactNumber());
+        }
+
+        [Test]
+        public void Should_Validate_InvalidCustomerContactNumber()
+        {
+            Assert.That(() => this._customer.SetContactNumber("+87000"), Throws.Exception);
+        }
     }
 }
