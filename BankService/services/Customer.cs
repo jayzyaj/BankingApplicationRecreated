@@ -1,5 +1,5 @@
-// using System;
-using Helpers;
+using System;
+using static Helpers.Helper;
 
 namespace Bank.Services
 {
@@ -19,7 +19,20 @@ namespace Bank.Services
 
         public string GetFullName()
         {
-            return $"{Helper.CapitalizeFirstLetter(this._firstName)} {Helper.CapitalizeFirstLetter(this._lastName)}";
+            return $"{CapitalizeFirstLetter(this._firstName)} {CapitalizeFirstLetter(this._lastName)}";
+        }
+
+        public void SetEmail(string email)
+        {
+            if (ValidateEmail(email))
+                this._email = email;
+            else
+                throw new Exception("Email is invalid");
+        }
+
+        public string GetEmail()
+        {
+            return this._email;
         }
     }
 }

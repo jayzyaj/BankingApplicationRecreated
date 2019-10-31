@@ -1,4 +1,5 @@
 using System;
+using System.Text.RegularExpressions;
 
 namespace Helpers
 {
@@ -13,6 +14,15 @@ namespace Helpers
                 return char.ToUpper(str[0]) + str.Substring(1);
 
             return str.ToUpper();
+        }
+
+        public static bool ValidateEmail(string email)
+        {
+            Regex regex = new Regex(@"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$");
+            Match match = regex.Match(email);
+            if (match.Success)
+                return true;
+            return false;
         }
     }
 }
