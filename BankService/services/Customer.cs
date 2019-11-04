@@ -55,13 +55,20 @@ namespace Bank.Services
             return true;
         }
 
-        public void OpenBankAccount()
+        public void OpenBankAccount(string accountType)
         {
-            if (HasBankAccount())
+            if (this.HasBankAccount())
                 throw new Exception("You already have an existing bank account.");
-            CheckingAccount newBankAccount = new CheckingAccount();
+
+            Account newBankAccount = null;
+            if (accountType == "checking")
+                newBankAccount = new CheckingAccount();
+            else if (accountType == "savings")
+                newBankAccount = new CheckingAccount();
+            else
+                throw new Exception("Something went wrong on choosing your account type.");
+
             this._bankAccount = newBankAccount;
-            Console.WriteLine(this._bankAccount.DisplayBalance());
         }
     }
 }

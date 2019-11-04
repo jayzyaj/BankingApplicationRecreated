@@ -20,7 +20,7 @@ namespace Bank.UnitTests.Services
         public void Should_Allow_User_ToOpen_BankAccount()
         {
             // this._customer.OpenBankAccount("HSBC", this._customer.GetFullName, 10171996, 100.00);
-            this._customer.OpenBankAccount();
+            this._customer.OpenBankAccount("savings");
             Assert.IsTrue(this._customer.HasBankAccount());
         }
     }
