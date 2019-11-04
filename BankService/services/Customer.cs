@@ -55,20 +55,37 @@ namespace Bank.Services
             return true;
         }
 
-        public void OpenBankAccount(string accountType)
+        public void OpenBankAccount(string accountType, string branchName, decimal initialDeposit)
         {
             if (this.HasBankAccount())
                 throw new Exception("You already have an existing bank account.");
 
-            Account newBankAccount = null;
-            if (accountType == "checking")
-                newBankAccount = new CheckingAccount();
-            else if (accountType == "savings")
-                newBankAccount = new CheckingAccount();
-            else
-                throw new Exception("Something went wrong on choosing your account type.");
+            Account newBankAccount = this.InitBankAccount(
+                accountType,
+                branchName,
+                initialDeposit
+            );
 
             this._bankAccount = newBankAccount;
+        }
+
+        public Account InitBankAccount(string accountType, string branchName, decimal initialDeposit)
+        {
+            Account newBankAccount = null;
+            if (accountType == "checking")
+                return newBankAccount = new CheckingAccount(
+                    this.GetFullName().ToUpper(),
+                    branchName,
+                    initialDeposit
+                );
+            else if (accountType == "savings")
+                return newBankAccount = new SavingsAccount(
+                    this.GetFullName().ToUpper(),
+                    branchName,
+                    initialDeposit
+                );
+            else
+                throw new Exception("Something went wrong on choosing your account type.");
         }
     }
 }

@@ -15,6 +15,13 @@ namespace Helpers
             return str.ToUpper();
         }
 
+        public static string CapitalizeAllLetter(string str)
+        {
+            if (str == null)
+                return null;
+            return str.ToUpper();
+        }
+
         public static bool ValidateEmail(string email)
         {
             Regex regex = new Regex(@"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$");
