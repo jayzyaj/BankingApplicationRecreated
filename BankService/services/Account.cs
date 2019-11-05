@@ -17,7 +17,7 @@ namespace Bank.Services
             this._accountName = accountName;
             this._branchName = branchName;
             this._balance = initialDeposit;
-            this._openDate = new DateTime();
+            this._openDate = DateTime.Now;
         }
 
         public void Deposit()
@@ -43,6 +43,11 @@ namespace Bank.Services
         public string GetBranchName()
         {
             return this._branchName;
+        }
+
+        public string GetDateUponOpeningAccount()
+        {
+            return this._openDate.ToString("M/d/yyyy");
         }
     }
 }

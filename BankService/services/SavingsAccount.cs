@@ -10,7 +10,7 @@ namespace Bank.Services
             this._accountName = accountName;
             this._branchName = branchName;
             this._balance = initialDeposit;
-            this._openDate = new DateTime();
+            // this._openDate = new DateTime();
         }
     }
 }

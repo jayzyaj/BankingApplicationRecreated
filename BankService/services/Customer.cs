@@ -105,5 +105,10 @@ namespace Bank.Services
         {
             return this._bankAccount.GetBranchName();
         }
+
+        public string GetBankAccountDateUponOpening()
+        {
+            return this._bankAccount.GetDateUponOpeningAccount();
+        }
     }
 }
