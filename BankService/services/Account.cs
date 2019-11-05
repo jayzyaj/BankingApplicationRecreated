@@ -39,5 +39,10 @@ namespace Bank.Services
         {
             return this._accountName;
         }
+
+        public string GetBranchName()
+        {
+            return this._branchName;
+        }
     }
 }

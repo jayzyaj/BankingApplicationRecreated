@@ -95,5 +95,15 @@ namespace Bank.Services
             
             return this._bankAccount;
         }
+
+        public string GetBankAccountName()
+        {
+            return this._bankAccount.GetAccountName();
+        }
+
+        public string GetBankAccountBranch()
+        {
+            return this._bankAccount.GetBranchName();
+        }
     }
 }
