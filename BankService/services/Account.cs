@@ -7,7 +7,7 @@ namespace Bank.Services
         protected string _accountName;
         protected int _accountNumber;
         protected string _branchName;
-        protected int _pin;
+        protected string _pin;
         protected decimal _balance = 0;
         protected DateTime _openDate;
         protected DateTime _closeDate;
@@ -17,6 +17,7 @@ namespace Bank.Services
             this._accountName = accountName;
             this._branchName = branchName;
             this._balance = initialDeposit;
+            this._pin = "1234";
             this._openDate = DateTime.Now;
         }
 
@@ -48,6 +49,13 @@ namespace Bank.Services
         public string GetDateUponOpeningAccount()
         {
             return this._openDate.ToString("M/d/yyyy");
+        }
+
+        public bool VerifyPin(string pin)
+        {
+            if (this._pin != pin)
+                return false;
+            return true;
         }
     }
 }

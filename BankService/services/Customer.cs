@@ -88,26 +88,38 @@ namespace Bank.Services
                 throw new Exception("Something went wrong on choosing your account type.");
         }
 
-        public Account GetBankAccountDetails()
+        public Account GetBankAccountDetails(string pin)
         {
             if (!this.HasBankAccount())
                 throw new Exception("You don't have an existing bank account.");
             
+            if (!this._bankAccount.VerifyPin(pin))
+                throw new Exception("Invalid PIN enterred.");
+            
             return this._bankAccount;
         }
 
-        public string GetBankAccountName()
+        public string GetBankAccountName(string pin)
         {
+            if (!this._bankAccount.VerifyPin(pin))
+                throw new Exception("Invalid PIN enterred.");
+
             return this._bankAccount.GetAccountName();
         }
 
-        public string GetBankAccountBranch()
+        public string GetBankAccountBranch(string pin)
         {
+            if (!this._bankAccount.VerifyPin(pin))
+                throw new Exception("Invalid PIN enterred.");
+
             return this._bankAccount.GetBranchName();
         }
 
-        public string GetBankAccountDateUponOpening()
+        public string GetBankAccountDateUponOpening(string pin)
         {
+            if (!this._bankAccount.VerifyPin(pin))
+                throw new Exception("Invalid PIN enterred.");
+                
             return this._bankAccount.GetDateUponOpeningAccount();
         }
     }

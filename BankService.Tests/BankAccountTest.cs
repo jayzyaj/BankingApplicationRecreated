@@ -26,7 +26,7 @@ namespace Bank.UnitTests.Services
         {
             this.OpenAccount();
             Assert.IsTrue(this._customer.HasBankAccount());
-            Assert.IsNotNull(this._customer.GetBankAccountDetails());
+            Assert.IsNotNull(this._customer.GetBankAccountDetails("1234"));
         }
 
         [Test]
@@ -37,24 +37,31 @@ namespace Bank.UnitTests.Services
         }
 
         [Test]
+        public void Should_Not_Allow_User_To_Access_AnyDetails_IfPinIsInvalid()
+        {
+            this.OpenAccount();
+            Assert.That(() => this._customer.GetBankAccountDetails("1345"), Throws.Exception);
+        }
+
+        [Test]
         public void Should_Match_AccountName_ToBe_UserFullName()
         {
             this.OpenAccount();
-            Assert.AreEqual("CHAE YOUNG", this._customer.GetBankAccountName());
+            Assert.AreEqual("CHAE YOUNG", this._customer.GetBankAccountName("1234"));
         }
 
         [Test]
         public void Should_Match_DateTimeUponOpening_ToBe_DateTimeTheUserOpenAnAccount()
         {
             this.OpenAccount();
-            Assert.AreEqual("11/5/2019", this._customer.GetBankAccountDateUponOpening());
+            Assert.AreEqual("11/5/2019", this._customer.GetBankAccountDateUponOpening("1234"));
         }
 
         [Test]
         public void Should_Match_BranchName_ToBe_BranchWhereUserOpenAccount()
         {
             this._customer.OpenBankAccount("savings", "Jupiter Avenue", 500.00m);
-            Assert.AreEqual("Jupiter Avenue", this._customer.GetBankAccountBranch());
+            Assert.AreEqual("Jupiter Avenue", this._customer.GetBankAccountBranch("1234"));
         }
     }
 }
