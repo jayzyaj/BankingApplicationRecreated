@@ -31,18 +31,18 @@ namespace Bank.Services
 
         }
 
-        public decimal DisplayBalance(string pin)
+        public string DisplayBalance(string pin)
         {
             if (!this.VerifyPin(pin))
-                throw new Exception("Old Pin is incorrect");
+                throw new Exception("PIN is incorrect");
 
-            return this._balance;
+            return this._balance.ToString();
         }
 
         public string GetAccountName(string pin)
         {
             if (!this.VerifyPin(pin))
-                throw new Exception("Old Pin is incorrect");
+                throw new Exception("PIN is incorrect");
 
             return this._accountName;
         }
@@ -50,7 +50,7 @@ namespace Bank.Services
         public string GetBranchName(string pin)
         {
             if (!this.VerifyPin(pin))
-                throw new Exception("Old Pin is incorrect");
+                throw new Exception("PIN is incorrect");
 
             return this._branchName;
         }
@@ -58,7 +58,7 @@ namespace Bank.Services
         public string GetDateUponOpeningAccount(string pin)
         {
             if (!this.VerifyPin(pin))
-                throw new Exception("Old Pin is incorrect");
+                throw new Exception("PIN is incorrect");
 
             return this._openDate.ToString("M/d/yyyy");
         }

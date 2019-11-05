@@ -99,6 +99,11 @@ namespace Bank.Services
             return this._bankAccount;
         }
 
+        public string GetBankAccountRemainingBalance(string pin)
+        {
+            return this._bankAccount.DisplayBalance(pin);
+        }
+
         public string GetBankAccountName(string pin)
         {
             return this._bankAccount.GetAccountName(pin);
@@ -116,7 +121,7 @@ namespace Bank.Services
 
         public void ChangeBankAccountPin(string oldPin, string newPin)
         {
-            this._bankAccount.ChangePin("1234", "2323");
+            this._bankAccount.ChangePin(oldPin, newPin);
         }
     }
 }

@@ -63,5 +63,27 @@ namespace Bank.UnitTests.Services
             this._customer.OpenBankAccount("savings", "Jupiter Avenue", 500.00m);
             Assert.AreEqual("Jupiter Avenue", this._customer.GetBankAccountBranch("1234"));
         }
+
+        [Test]
+        public void Should_Validate_IfOldPinIsIncorrect_WhenChangingPin()
+        {
+            this.OpenAccount();
+            Assert.That(() => this._customer.ChangeBankAccountPin("4321", "2332"), Throws.Exception);
+        }
+
+        [Test]
+        public void Should_Validate_IfPinIsChanged()
+        {
+            this._customer.OpenBankAccount("savings", "Jupiter Avenue", 500.00m);
+            this._customer.ChangeBankAccountPin("1234", "2332");
+            Assert.AreEqual("Jupiter Avenue", this._customer.GetBankAccountBranch("2332"));
+        }
+
+        [Test]
+        public void Should_Match_InitialDeposit_With_RemainingBalance()
+        {
+            this._customer.OpenBankAccount("savings", "Jupiter Avenue", 500.00m);
+            Assert.AreEqual("500.00", this._customer.GetBankAccountRemainingBalance("1234"));
+        }
     }
 }
