@@ -87,5 +87,13 @@ namespace Bank.Services
             else
                 throw new Exception("Something went wrong on choosing your account type.");
         }
+
+        public Account GetBankAccountDetails()
+        {
+            if (!this.HasBankAccount())
+                throw new Exception("You don't have an existing bank account.");
+            
+            return this._bankAccount;
+        }
     }
 }

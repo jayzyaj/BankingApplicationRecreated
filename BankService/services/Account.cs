@@ -34,5 +34,10 @@ namespace Bank.Services
         {
             return this._balance;
         }
+
+        public string GetAccountName()
+        {
+            return this._accountName;
+        }
     }
 }
