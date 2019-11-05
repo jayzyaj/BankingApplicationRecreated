@@ -31,23 +31,35 @@ namespace Bank.Services
 
         }
 
-        public decimal DisplayBalance()
+        public decimal DisplayBalance(string pin)
         {
+            if (!this.VerifyPin(pin))
+                throw new Exception("Old Pin is incorrect");
+
             return this._balance;
         }
 
-        public string GetAccountName()
+        public string GetAccountName(string pin)
         {
+            if (!this.VerifyPin(pin))
+                throw new Exception("Old Pin is incorrect");
+
             return this._accountName;
         }
 
-        public string GetBranchName()
+        public string GetBranchName(string pin)
         {
+            if (!this.VerifyPin(pin))
+                throw new Exception("Old Pin is incorrect");
+
             return this._branchName;
         }
 
-        public string GetDateUponOpeningAccount()
+        public string GetDateUponOpeningAccount(string pin)
         {
+            if (!this.VerifyPin(pin))
+                throw new Exception("Old Pin is incorrect");
+
             return this._openDate.ToString("M/d/yyyy");
         }
 
@@ -56,6 +68,14 @@ namespace Bank.Services
             if (this._pin != pin)
                 return false;
             return true;
+        }
+
+        public void ChangePin(string oldPin, string newPin)
+        {
+            if (!this.VerifyPin(oldPin))
+                throw new Exception("Old Pin is incorrect");
+            else
+                this._pin = newPin;
         }
     }
 }

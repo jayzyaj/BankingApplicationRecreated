@@ -101,26 +101,22 @@ namespace Bank.Services
 
         public string GetBankAccountName(string pin)
         {
-            if (!this._bankAccount.VerifyPin(pin))
-                throw new Exception("Invalid PIN enterred.");
-
-            return this._bankAccount.GetAccountName();
+            return this._bankAccount.GetAccountName(pin);
         }
 
         public string GetBankAccountBranch(string pin)
         {
-            if (!this._bankAccount.VerifyPin(pin))
-                throw new Exception("Invalid PIN enterred.");
-
-            return this._bankAccount.GetBranchName();
+            return this._bankAccount.GetBranchName(pin);
         }
 
         public string GetBankAccountDateUponOpening(string pin)
         {
-            if (!this._bankAccount.VerifyPin(pin))
-                throw new Exception("Invalid PIN enterred.");
-                
-            return this._bankAccount.GetDateUponOpeningAccount();
+            return this._bankAccount.GetDateUponOpeningAccount(pin);
+        }
+
+        public void ChangeBankAccountPin(string oldPin, string newPin)
+        {
+            this._bankAccount.ChangePin("1234", "2323");
         }
     }
 }
