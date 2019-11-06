@@ -10,6 +10,7 @@ namespace Bank.Services
         protected string _branchName;
         protected string _pin;
         protected decimal _balance = 0;
+        protected decimal _preArrangeOverdraftFee = 100.00m;
         protected DateTime _openDate;
         protected DateTime _closeDate;
 
@@ -38,10 +39,10 @@ namespace Bank.Services
             if (!this.VerifyPin(pin))
                 throw new Exception("PIN is incorrect");
 
-            if (amount < 100.00m)
-                throw new Exception("Amount should be 100.00 or more");
+            if (amount < 0)
+                throw new Exception("Amount should be not be 0");
 
-            if (amount > this._balance)
+            if (amount > this._balance && (this._balance - amount) < this._preArrangeOverdraftFee)
                 throw new Exception("Amount should not be greater than your remaining balance");
 
             if (!IsDivisibleByHundreds(amount))
@@ -99,11 +100,36 @@ namespace Bank.Services
                 this._pin = newPin;
         }
 
+        public void ApplyPreArrangeOverdraft(string pin, decimal preArrangeAmount)
+        {
+            if (!this.VerifyPin(pin))
+                throw new Exception("PIN is incorrect");
+
+            if (preArrangeAmount > 0)
+                throw new Exception("Overdraft amount fee limit should not be greater than 0");
+            
+            if (preArrangeAmount < -10000.00m)
+                throw new Exception("This bank only allows maximum overdraft fee of 10,000.00");
+            
+            if (!IsDivisibleByHundreds(preArrangeAmount))
+                throw new Exception("Amount should only be divisible by hundreds");
+
+            this._preArrangeOverdraftFee = preArrangeAmount;
+        }
+
+        public string GetOverdraftLimit(string pin)
+        {
+            if (!this.VerifyPin(pin))
+                throw new Exception("PIN is incorrect");
+
+            return this._preArrangeOverdraftFee.ToString();
+        }
+
         public void CloseAccount(string pin)
         {
             if (!this.VerifyPin(pin))
                 throw new Exception("PIN is incorrect");
-                
+
             if (this._balance != 0.00m)
                 throw new Exception("Please withdraw all your remaining balance before closing account");
             

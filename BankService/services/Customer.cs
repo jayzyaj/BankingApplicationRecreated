@@ -114,6 +114,16 @@ namespace Bank.Services
             return this._bankAccount.Withdraw(pin, amount);
         }
 
+        public void ApplyAccountAgreedOverdraft(string pin, decimal preArrangeAmount)
+        {
+            this._bankAccount.ApplyPreArrangeOverdraft(pin, preArrangeAmount);
+        }
+
+        public string GetAccountOverdraftLimit(string pin)
+        {
+            return this._bankAccount.GetOverdraftLimit(pin);
+        }
+
         public string GetBankAccountName(string pin)
         {
             return this._bankAccount.GetAccountName(pin);
