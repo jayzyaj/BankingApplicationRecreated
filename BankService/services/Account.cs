@@ -98,5 +98,24 @@ namespace Bank.Services
             else
                 this._pin = newPin;
         }
+
+        public void CloseAccount(string pin)
+        {
+            if (!this.VerifyPin(pin))
+                throw new Exception("PIN is incorrect");
+                
+            if (this._balance != 0.00m)
+                throw new Exception("Please withdraw all your remaining balance before closing account");
+            
+            this._closeDate = DateTime.Now;
+        }
+
+        public string GetClosedDate()
+        {
+            if (this._closeDate == null)
+                throw new Exception("The account is still active");
+
+            return this._closeDate.ToString("M/d/yyyy");
+        }
     }
 }

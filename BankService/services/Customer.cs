@@ -133,5 +133,15 @@ namespace Bank.Services
         {
             this._bankAccount.ChangePin(oldPin, newPin);
         }
+
+        public void CloseBankAccount(string pin)
+        {
+            this._bankAccount.CloseAccount(pin);
+        }
+
+        public string GetBankAccountClosedDate()
+        {
+            return this._bankAccount.GetClosedDate();
+        }
     }
 }
