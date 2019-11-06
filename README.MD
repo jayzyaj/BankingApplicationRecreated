@@ -13,9 +13,9 @@ The Bank Account Using Object-Oriented Principles, simulate a basic current acco
 
 ### Getting Started
 
-1.) I used the dotnet CLI for Mac for creating the solution and the projects **BankService** the main production or implementation code and **BankService.Tests** the test code to test the implementation code if it meets the expected behaviour base on the requirements.
+1.) I used [dotnet CLI](https://dotnet.microsoft.com/download) for Mac for creating the solution and the projects. **BankService** is the main production or implementation code and **BankService.Tests** is the test code to test the implementation code if it meets the expected behaviour base on the requirements.
 
-2.) The **BankService.Tests** uses NUnit as it's testing tool
+2.) The **BankService.Tests** uses [NUnit](https://nunit.org/) as it's testing tool
 
 3.) Navigate to the project directory:
 
