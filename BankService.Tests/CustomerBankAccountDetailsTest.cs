@@ -4,7 +4,7 @@ using Bank.Services;
 namespace Bank.UnitTests.Services
 {
     [TestFixture]
-    public class BankAccountTest
+    public class CustomerBankAccountDetailsTest
     {
         private Customer _customer;
 
@@ -54,7 +54,7 @@ namespace Bank.UnitTests.Services
         public void Should_Match_DateTimeUponOpening_ToBe_DateTimeTheUserOpenAnAccount()
         {
             this.OpenAccount();
-            Assert.AreEqual("11/5/2019", this._customer.GetBankAccountDateUponOpening("1234"));
+            Assert.AreEqual("11/6/2019", this._customer.GetBankAccountDateUponOpening("1234"));
         }
 
         [Test]
