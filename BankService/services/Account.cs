@@ -1,4 +1,5 @@
 using System;
+using static Helpers.Helper;
 
 namespace Bank.Services
 {
@@ -26,12 +27,32 @@ namespace Bank.Services
             if (!this.VerifyPin(pin))
                 throw new Exception("PIN is incorrect");
 
+            if (amount < 100.00m)
+                throw new Exception("Amount should be 100.00 or more");
+
             this._balance += amount;
         }
 
-        public void Withdraw()
+        public string Withdraw(string pin, decimal amount)
         {
+            if (!this.VerifyPin(pin))
+                throw new Exception("PIN is incorrect");
 
+            if (amount < 100.00m)
+                throw new Exception("Amount should be 100.00 or more");
+
+            if (amount > this._balance)
+                throw new Exception("Amount should not be greater than your remaining balance");
+
+            if (amount > this._balance)
+                throw new Exception("Amount should not be greater than your remaining balance");
+
+            if (!IsDivisibleByHundreds(amount))
+                throw new Exception("Amount should only be divisible by hundreds");
+
+            this._balance -= amount;
+
+            return amount.ToString();
         }
 
         public string DisplayBalance(string pin)

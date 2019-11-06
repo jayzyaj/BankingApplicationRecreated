@@ -109,6 +109,11 @@ namespace Bank.Services
             this._bankAccount.Deposit(pin, amount);
         }
 
+        public string WithdrawToAccount(string pin, decimal amount)
+        {
+            return this._bankAccount.Withdraw(pin, amount);
+        }
+
         public string GetBankAccountName(string pin)
         {
             return this._bankAccount.GetAccountName(pin);

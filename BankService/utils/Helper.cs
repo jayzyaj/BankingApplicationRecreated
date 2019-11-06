@@ -39,5 +39,13 @@ namespace Helpers
                 return true;
             return false;
         }
+
+        public static bool IsDivisibleByHundreds(decimal num)
+        {
+            var result = num % 100;
+            if (result != 0)
+                return false;
+            return true;
+        }
     }
 }
