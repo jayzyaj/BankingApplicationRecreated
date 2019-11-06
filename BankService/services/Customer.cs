@@ -55,7 +55,7 @@ namespace Bank.Services
             return true;
         }
 
-        public void OpenBankAccount(string accountType, string branchName, decimal initialDeposit)
+        public void OpenBankAccount(AccountType accountType, string branchName, decimal initialDeposit)
         {
             if (this.HasBankAccount())
                 throw new Exception("You already have an existing bank account.");
@@ -69,16 +69,16 @@ namespace Bank.Services
             this._bankAccount = newBankAccount;
         }
 
-        public Account InitBankAccount(string accountType, string branchName, decimal initialDeposit)
+        public Account InitBankAccount(AccountType accountType, string branchName, decimal initialDeposit)
         {
             Account newBankAccount = null;
-            if (accountType == "checking")
+            if (accountType == AccountType.Checking)
                 return newBankAccount = new CheckingAccount(
                     this.GetFullName().ToUpper(),
                     branchName,
                     initialDeposit
                 );
-            else if (accountType == "savings")
+            else if (accountType == AccountType.Savings)
                 return newBankAccount = new SavingsAccount(
                     this.GetFullName().ToUpper(),
                     branchName,

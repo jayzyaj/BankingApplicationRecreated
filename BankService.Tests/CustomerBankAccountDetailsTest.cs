@@ -18,7 +18,7 @@ namespace Bank.UnitTests.Services
 
         public void OpenAccount()
         {
-            this._customer.OpenBankAccount("savings", "Paseo De Roxas", 500.00m);
+            this._customer.OpenBankAccount(AccountType.Checking, "Paseo De Roxas", 500.00m);
         }
 
         [Test]
@@ -33,7 +33,7 @@ namespace Bank.UnitTests.Services
         public void Should_Not_Allow_User_ToOpen_BankAccount_IfHasOne()
         {
             this.OpenAccount();
-            Assert.That(() => this._customer.OpenBankAccount("checking", "Ayala Avenue", 500.00m), Throws.Exception);
+            Assert.That(() => this._customer.OpenBankAccount(AccountType.Checking, "Ayala Avenue", 500.00m), Throws.Exception);
         }
 
         [Test]
@@ -60,7 +60,7 @@ namespace Bank.UnitTests.Services
         [Test]
         public void Should_Match_BranchName_ToBe_BranchWhereUserOpenAccount()
         {
-            this._customer.OpenBankAccount("savings", "Jupiter Avenue", 500.00m);
+            this._customer.OpenBankAccount(AccountType.Savings, "Jupiter Avenue", 500.00m);
             Assert.AreEqual("Jupiter Avenue", this._customer.GetBankAccountBranch("1234"));
         }
 
@@ -74,7 +74,7 @@ namespace Bank.UnitTests.Services
         [Test]
         public void Should_Validate_IfPinIsChanged()
         {
-            this._customer.OpenBankAccount("savings", "Jupiter Avenue", 500.00m);
+            this._customer.OpenBankAccount(AccountType.Savings, "Jupiter Avenue", 500.00m);
             this._customer.ChangeBankAccountPin("1234", "2332");
             Assert.AreEqual("Jupiter Avenue", this._customer.GetBankAccountBranch("2332"));
         }
@@ -82,7 +82,7 @@ namespace Bank.UnitTests.Services
         [Test]
         public void Should_Match_InitialDeposit_With_RemainingBalance()
         {
-            this._customer.OpenBankAccount("savings", "Jupiter Avenue", 500.00m);
+            this._customer.OpenBankAccount(AccountType.Savings, "Jupiter Avenue", 500.00m);
             Assert.AreEqual("500.00", this._customer.GetBankAccountRemainingBalance("1234"));
         }
 

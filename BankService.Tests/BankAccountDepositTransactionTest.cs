@@ -20,7 +20,7 @@ namespace Bank.UnitTests.Services
 
         public void OpenAccount()
         {
-            this._customer.OpenBankAccount("savings", "Paseo De Roxas", 500.00m);
+            this._customer.OpenBankAccount(AccountType.Savings, "Paseo De Roxas", 500.00m);
         }
 
         [Test]

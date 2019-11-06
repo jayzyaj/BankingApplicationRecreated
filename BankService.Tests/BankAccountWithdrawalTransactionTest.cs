@@ -15,7 +15,7 @@ namespace Bank.UnitTests.Services
             this._customer = new Customer("Chae", "Young");
             this._customer.SetContactNumber("+639399399027");
             this._customer.SetEmail("deverajaycee17@gmail.com");
-            this._customer.OpenBankAccount("savings", "Paseo De Roxas", 10000.00m);
+            this._customer.OpenBankAccount(AccountType.Savings, "Paseo De Roxas", 10000.00m);
         }
 
         [Test]
