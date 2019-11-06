@@ -17,17 +17,17 @@ The Bank Account Using Object-Oriented Principles, simulate a basic current acco
 
 2.) The **BankService.Tests** uses [NUnit](https://nunit.org/) as it's testing tool
 
-3.) Navigate to the project directory:
+### Running the Projects
+
+1.) Navigate to the project directory after cloning the project:
 
 `cd BankApplicationRecreated`
 
-### Running the Projects
-
-1.) Navigate to the solution directory and run this command below to test all the expected behaviour:
+2.) Navigate to the solution directory and run this command below to test all the expected behaviour:
 
 `dotnet test`
 
-2.) If you want to see a specific output you can edit the **Program.cs** file in *BankService* Project:
+3.) If you want to see a specific output you can edit the **Program.cs** file in *BankService* Project:
 
 `cd BankService`
 
