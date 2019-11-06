@@ -30,5 +30,23 @@ namespace Bank.UnitTests.Services
             Assert.That(() => this._customer.WithdrawToAccount("1234", 100.99m), Throws.Exception);
             Assert.That(() => this._customer.WithdrawToAccount("1234", 100.01m), Throws.Exception);
         }
+
+        [Test]
+        public void Should_Not_Allow_Customer_ToWithdraw_If_Pin_IsIncorrect()
+        {
+            Assert.That(() => this._customer.WithdrawToAccount("2332", 400.00m), Throws.Exception);
+        }
+
+        [Test]
+        public void Should_Not_Allow_Customer_ToWithdraw_MoreThanRemainingBalance()
+        {
+            Assert.That(() => this._customer.WithdrawToAccount("1234", 10000.01m), Throws.Exception);
+        }
+
+        [Test]
+        public void Should_Match_WithdrawAmount()
+        {
+            Assert.That(this._customer.WithdrawToAccount("1234", 1500.00m), Is.EqualTo("1500.00"));
+        }
     }
 }

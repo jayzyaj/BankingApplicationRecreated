@@ -44,9 +44,6 @@ namespace Bank.Services
             if (amount > this._balance)
                 throw new Exception("Amount should not be greater than your remaining balance");
 
-            if (amount > this._balance)
-                throw new Exception("Amount should not be greater than your remaining balance");
-
             if (!IsDivisibleByHundreds(amount))
                 throw new Exception("Amount should only be divisible by hundreds");
 
