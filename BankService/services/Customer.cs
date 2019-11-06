@@ -104,6 +104,11 @@ namespace Bank.Services
             return this._bankAccount.DisplayBalance(pin);
         }
 
+        public void DepositToAccount(string pin, decimal amount)
+        {
+            this._bankAccount.Deposit(pin, amount);
+        }
+
         public string GetBankAccountName(string pin)
         {
             return this._bankAccount.GetAccountName(pin);

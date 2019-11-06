@@ -21,9 +21,12 @@ namespace Bank.Services
             this._openDate = DateTime.Now;
         }
 
-        public void Deposit()
+        public void Deposit(string pin, decimal amount)
         {
+            if (!this.VerifyPin(pin))
+                throw new Exception("PIN is incorrect");
 
+            this._balance += amount;
         }
 
         public void Withdraw()
